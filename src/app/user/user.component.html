@@ -1,0 +1,19 @@
+<section>
+@if (estalogado) {
+    <p>Bienvenido, {{ username }}</p>
+    <img src="https://animotaku.fr/wp-content/uploads/2023/12/film-the-eminence-in-shadow-lost-echoes-annonce.jpg">
+    <app-games 
+    [nombreUsuario]="username" (comunicadorEveDeHijo)="getfavourite($event)"
+    >
+    @if(juegofavorito){
+        <p>Tu juego favorito es {{ juegofavorito }}</p>
+    }
+   
+    </app-games>
+
+} @else {
+    <p>Inicia Sesison</p>
+    <input (click)="cambiarEstado()" type="button" value="iniciar sesion"/>
+}
+
+</section>
